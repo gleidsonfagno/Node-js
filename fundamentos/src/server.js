@@ -1,22 +1,18 @@
 import http from "node:http"
+import { jsonBodyHanndler } from "./middlewares/jsonBodyHanndler.js"
 
 const server = http.createServer(async (req, res) => {
     const {method, url} = req
-    const buffers = []
 
-    for await (const chunk of req) {
-        buffers.push(chunk)
-    }
+    await jsonBodyHanndler(req, res)
 
-    console.log(Buffer.concat(buffers).toString())
-    
     if(method === "GET" && url === "/products"){
         return res.end("Lista de produtos!")    
     }
 
     if (method === "POST" && url === "/products"){
-
-        return res.writeHead(201).end("Produtos cadastrado!")
+        console.log(req.body)
+        return res.writeHead(201).end(JSON.stringify(req.body))
     }
     return res.writeHead(404).end("Rota nao encontrada")
 })
