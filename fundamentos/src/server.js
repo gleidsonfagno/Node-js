@@ -1,10 +1,10 @@
 import http from "node:http"
 import { jsonBodyHanndler } from "./middlewares/jsonBodyHanndler.js"
-import { routeHander } from "./middlewares/routeHandller.js"
+import { routeHandler } from "./middlewares/routeHandler.js"
 
 const server = http.createServer(async (req, res) => {
     await jsonBodyHanndler(req, res)
-    routeHander(req, res)
+    routeHandler(req, res)
 })
 
 server.listen(3333)
