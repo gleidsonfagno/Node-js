@@ -1,4 +1,5 @@
 import { routes } from "../routes.js"
+import { extractQueryParams } from "../utils/estract-query-params.js";
 
 export function routeHandler(req, res) {
   const route = routes.find((route) => {
@@ -7,11 +8,14 @@ export function routeHandler(req, res) {
 
   if (route) {
     const routeParams = req.url.match(route.path)
-    console.log(routeParams)
-    const { ...params} = routeParams.groups 
 
+    const {query, ...params} = routeParams.groups 
+    extractQueryParams(query)
+    
     req.params = params
-    console.log(routeParams.groups)
+    // recuperar os prametros
+    req.query = query ? extractQueryParams(query) : {}
+
     return route.controller(req, res);
   }
   return res.writeHead(404).end("Rota não encontrada");
