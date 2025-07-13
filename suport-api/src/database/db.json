@@ -1,0 +1,22 @@
+{
+  "tickets": [
+    {
+      "id": "73b16eec-f0a5-42f8-801e-fcef742c9742",
+      "equipment": "Teclado",
+      "description": "A tecla de espaco estacomdefeito",
+      "user_name": "João",
+      "status": "closed",
+      "create_at": "2025-06-28T14:14:26.451Z",
+      "updated_at": "2025-06-28T14:14:26.451Z"
+    },
+    {
+      "id": "2b3d23b9-1eb6-4985-9bae-9c734506c449",
+      "equipment": "Teclado",
+      "description": "A tecla de espaco estacomdefeito",
+      "user_name": "João",
+      "status": "open",
+      "create_at": "2025-07-08T00:41:22.386Z",
+      "updated_at": "2025-07-08T00:41:22.386Z"
+    }
+  ]
+}
