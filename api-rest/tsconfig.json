@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    // Modules
+    "module": "nodenext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
